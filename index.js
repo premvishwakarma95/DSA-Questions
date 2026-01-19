@@ -191,4 +191,32 @@ function moveZeros(arr) {
 }
 console.log(moveZeros([1, 0, 3, 0, 5]));
 
+// 16 Count vowels & consonants
+function countVowelsAndConsonants(str) {
+    let vowels = 0;
+    let consonants = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        let ch = str[i];
+        // check lowercase & uppercase letters manually
+        if (
+            (ch >= 'a' && ch <= 'z') || 
+            (ch >= 'A' && ch <= 'Z')
+        ) {
+            if (
+                ch === 'a' || ch === 'e' || ch === 'i' ||
+                ch === 'o' || ch === 'u' ||
+                ch === 'A' || ch === 'E' || ch === 'I' ||
+                ch === 'O' || ch === 'U'
+            ) {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+    return { vowels, consonants };
+}
+// Example
+console.log(countVowelsAndConsonants("Hello World"));
 
