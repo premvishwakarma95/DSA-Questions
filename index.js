@@ -158,3 +158,37 @@ function sortAscending(arr) {
 let numbers = [5, 2, 9, 1, 3];
 console.log(sortAscending(numbers)); // [1, 2, 3, 5, 9]
 
+// 14 Find Largest Number in Array
+function findLargest(arr) {
+    let max = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+console.log(findLargest([3, 7, 1, 9, 4])); // 9
+
+// 15 Move Zeros to End
+function moveZeros(arr) {
+    let result = [];
+    let zeroCount = 0;
+ 
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 0) {
+            result[result.length] = arr[i];
+        } else {
+            zeroCount++;
+        }
+    }
+    while (zeroCount > 0) {
+        result[result.length] = 0;
+        zeroCount--;
+    }
+    return result;
+}
+console.log(moveZeros([1, 0, 3, 0, 5]));
+
+
