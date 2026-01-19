@@ -137,3 +137,24 @@ function mergeObjects(obj1, obj2) {
   return { ...obj1, ...obj2 };
 }
 
+// 13 function to arrange array elements in ascending order without using any built-in methods
+function sortAscending(arr) {
+    let n = arr.length;
+
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // swap without using methods
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    return arr;
+}
+// Example
+let numbers = [5, 2, 9, 1, 3];
+console.log(sortAscending(numbers)); // [1, 2, 3, 5, 9]
+
