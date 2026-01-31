@@ -55,3 +55,17 @@ for(let i=0; i<arr.length; i++) {
 }
 console.log(second_small, second_large)
 ```
+
+## 3 Find out is array sorted or not?
+```js
+const arr = [1, 2, 4, 6, 7, 5, 3]
+const sortArr = JSON.parse(JSON.stringify(arr)).sort((a,b)=> a-b);
+let isSorted = true;
+console.log(sortArr, arr)
+for(let i=0; i<arr.length; i++) {
+    if(arr[i] !== sortArr[i]) {
+        isSorted = false;
+    }
+}
+console.log(isSorted ? "sorted" : "not sorted");
+```
