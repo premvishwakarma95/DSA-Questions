@@ -23,6 +23,14 @@ console.log(max)
 
 ## 2 Find second largest and second smallest number in the array?
 ```js
+// First Approach
+let arr = [4,6,3,9,1];
+let length = arr.length;
+let second_larget = arr.sort((a,b) => b-a)[1];
+let second_smallest = arr.sort((a,b) => a-b)[1];
+console.log(second_larget, second_smallest);
+
+// Second Approach
 const arr = [1, 2, 4, 6, 7, 5]
 
 // Here Infinity is greate number of all and -Infinity is small number of all
@@ -37,7 +45,6 @@ for(let i=0; i<arr.length; i++) {
         large = arr[i];
     }
 }
-
 for(let i=0; i<arr.length; i++) {
     if(second_small > arr[i] && arr[i] !== small) {
         second_small = arr[i];
@@ -46,6 +53,5 @@ for(let i=0; i<arr.length; i++) {
         second_large = arr[i];
     }
 }
-
 console.log(second_small, second_large)
 ```
