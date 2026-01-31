@@ -56,6 +56,8 @@ for(let i=0; i<arr.length; i++) {
 console.log(second_small, second_large)
 ```
 
+---
+
 ## 3 Find out is array sorted or not?
 ```js
 // first approach
@@ -81,6 +83,8 @@ for(let i=0; i<arr.length; i++) {
 console.log(isSorted ? "sorted" : "not sorted");
 ```
 
+---
+
 ## 4 Remove Duplicates in-place from Sorted Array?
 ```js
 function removeDuplicates(arr) {
@@ -95,5 +99,42 @@ function removeDuplicates(arr) {
   }
 
   return result;
+}
+```
+
+---
+
+## 4 move all zero elements of array at the end?
+```js
+// First Approach
+let arr = [1,3,0,4,0,5]
+let sortedArr = [];
+let zeroArr = [];
+for(let i=0; i<arr.length; i++){
+    if(arr[i] == 0){
+        sortedArr.push(arr[i]);
+    } else {
+        zeroArr.push(arr[i]);
+    }
+}
+sortedArr=[...sortedArr, ...zeroArr];
+console.log(sortedArr);
+
+// second approach
+function moveZeros(arr) {
+  let k = 0; // position for next non-zero
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      arr[k] = arr[i];
+      k++;
+    }
+  }
+  // fill remaining positions with 0
+  while (k < arr.length) {
+    arr[k] = 0;
+    k++;
+  }
+  return arr;
 }
 ```
