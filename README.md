@@ -138,3 +138,30 @@ function moveZeros(arr) {
   return arr;
 }
 ```
+
+---
+
+## 5 Find the keys of nested Object.
+```js
+let payload = {
+    name: "Prem Vishwakarma",
+    obj2: {
+        language: "js",
+        obj3: {
+            framework: "react",
+        },
+    },
+};
+
+// should print all the keys
+function getKeys(obj) {
+    for(let key in obj) {
+        console.log(key);
+        if(typeof obj[key] == 'object') {
+            getKeys(obj[key]);
+        }
+    }
+}
+
+getKeys(payload)
+```
