@@ -165,3 +165,42 @@ function getKeys(obj) {
 
 getKeys(payload)
 ```
+
+---
+
+## 6 find anagram?
+// input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+// output = [ [ 'tea', 'ate', 'eat' ], [ 'nat', 'tan' ], [ 'bat' ] ];
+```js
+let inputArr = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+let outputArr = [];
+let arr1 = [];
+
+for(let i=0; i<inputArr.length; i++) {
+    let j=0;
+    let arr=[];
+    if(!arr1.includes(inputArr[i])) {
+      for(j=0; j<inputArr.length; j++) {
+        if(i !== j && !arr1.includes(inputArr[j]) && inputArr[i].length == inputArr[j].length) {
+          let isMatch = true;
+          let word = inputArr[i];
+          for(let k=0; k<word.length; k++) {
+            if(!inputArr[j].includes(word[k])) {
+              isMatch = false;
+            }
+          }
+          if(isMatch) {
+            arr.push(inputArr[j]);
+            arr1.push(inputArr[j]);
+          }
+        }
+      }
+      arr.push(inputArr[i]);
+      arr1.push(inputArr[i])
+      outputArr.push(arr);
+    }
+}
+
+console.log(outputArr)
+```
