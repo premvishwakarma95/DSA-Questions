@@ -169,8 +169,8 @@ getKeys(payload)
 ---
 
 ## 6 find anagram?
-// input = ["eat", "tea", "tan", "ate", "nat", "bat"];  
-// output = [ [ 'tea', 'ate', 'eat' ], [ 'nat', 'tan' ], [ 'bat' ] ];
+- input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+- output = [ [ 'tea', 'ate', 'eat' ], [ 'nat', 'tan' ], [ 'bat' ] ];
 ```js
 let inputArr = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
